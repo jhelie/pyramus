@@ -1,48 +1,66 @@
 package fi.pyramus.rest;
 
-public class OauthTestsIT extends AbstractRESTServiceTest {
-  /* TODO: implement proper tests
+import static com.jayway.restassured.RestAssured.given;
+
+import org.apache.oltu.oauth2.client.request.OAuthClientRequest;
+import org.apache.oltu.oauth2.common.exception.OAuthSystemException;
+import org.apache.oltu.oauth2.common.message.types.ResponseType;
+import org.junit.Test;
+
+import com.jayway.restassured.http.ContentType;
+import com.jayway.restassured.response.Response;
+
+import fi.pyramus.Common;
+
+public class OauthTestsIT {
+  /* TODO: implement proper tests 
   @Test
   public void testSkipUserPrompt() throws OAuthSystemException{
     
-    login(2);
+//    login(2);
         
-    OAuthClientRequest request = OAuthClientRequest
-        .authorizationLocation(Common.AUTH_URL)
-        .setClientId(Common.CLIENT_ID)
-        .setRedirectURI(Common.REDIRECT_URL)
-        .setResponseType(ResponseType.CODE.toString())
-        .setState("state")
-        .buildQueryMessage();
+//    OAuthClientRequest request = OAuthClientRequest
+//        .authorizationLocation(Common.AUTH_URL)
+//        .setClientId(Common.CLIENT_ID)
+//        .setRedirectURI(Common.REDIRECT_URL)
+//        .setResponseType(ResponseType.CODE.toString())
+//        .setState("state")
+//        .buildQueryMessage();
     
-    Response htmlResponse = given()
-        .header("Accept-Language", "en-US,en;q=0.5")
-        //.redirects().follow(false)
-        //.cookie("pyramusLocale", "fi_FI")
-        .contentType(ContentType.ANY)
-        .sessionId(getSessionId())
-        .get(request.getLocationUri());
+//    given().headers(getAuthHeaders())
+//    .contentType("application/json")
+//    .body(academicTerm)
+//    .post("/calendar/academicTerms");
     
-    OAuthClientRequest redirectRequest = OAuthClientRequest
-        .authorizationLocation(Common.AUTH_URL)
-        .setClientId(Common.SKIP_ID)
-        .setRedirectURI(Common.REDIRECT_URL)
-        .setResponseType(ResponseType.CODE.toString())
-        .setState("state")
-        .buildQueryMessage();
-    
-    Response redirectResponse = given()
-        .header("Accept-Language", "en-US,en;q=0.5")
-        //.redirects().follow(false)
-        //.cookie("pyramusLocale", "fi_FI")
-        .contentType(ContentType.ANY)
-        .sessionId(getSessionId())
-        .get("https://dev.pyramus.fi:8443/system/plugins.page#at-plugins");
-    
-    System.out.println(redirectResponse.asString());       
+//    Response htmlResponse = given()
+//        .headers("Accept-Language", "en-US,en;q=0.5")
+//        //.redirects().follow(false)
+//        //.cookie("pyramusLocale", "fi_FI")
+//        .contentType(ContentType.ANY)
+//        .sessionId(getSessionId())
+//        .get(request.getLocationUri());
+//    
+//    OAuthClientRequest redirectRequest = OAuthClientRequest
+//        .authorizationLocation(Common.AUTH_URL)
+////        .setClientId(Common.SKIP_ID)
+//        .setClientId(Common.CLIENT_ID)
+//        .setRedirectURI(Common.REDIRECT_URL)
+//        .setResponseType(ResponseType.CODE.toString())
+//        .setState("state")
+//        .buildQueryMessage();
+//    
+//    Response redirectResponse = given()
+//        .header("Accept-Language", "en-US,en;q=0.5")
+//        //.redirects().follow(false)
+//        //.cookie("pyramusLocale", "fi_FI")
+//        .contentType(ContentType.ANY)
+//        .sessionId(getSessionId())
+//        .get("https://dev.pyramus.fi:8443/system/plugins.page#at-plugins");
+//    
+//    System.out.println(redirectResponse.asString());       
   
   }
-  
+  /*
   @Test
   public void testRefreshToken(){
     OAuthClientRequest tokenRequest = null;

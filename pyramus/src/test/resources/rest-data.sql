@@ -44,7 +44,7 @@ values
   (7, 'Test User  #1', 1),
   (8, 'Test Manager #1', 1),
   (9, 'Test Administrator #1', 1),
-  (10, 'Test Student #1', 1);;
+  (10, 'Test Student #1', 1);
   
 insert into 
   Email (id, address, defaultAddress, contactInfo, contactType, indexColumn, version)
