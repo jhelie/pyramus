@@ -13,8 +13,8 @@ import fi.pyramus.ui.AbstractUITest;
 public class StudentTestsBase extends AbstractUITest {
   
   @Test
-  @SqlBefore ({"sql/basic-before.sql", "sql/ui-student-data-before.sql"})
-  @SqlAfter ({"sql/basic-after.sql","sql/ui-student-data-after.sql"})
+  @SqlBefore (value={"sql/basic-before.sql", "sql/ui-student-data-before.sql"})
+  @SqlAfter (value={"sql/basic-after.sql","sql/ui-student-data-after.sql"})
   public void testCreateStudent(){
     login(ADMIN_USERNAME, ADMIN_PASSWORD);
     getWebDriver().get(getAppUrl(true) + "/students/createstudent.page");
@@ -37,8 +37,8 @@ public class StudentTestsBase extends AbstractUITest {
   }
   
   @Test
-  @SqlBefore ({"sql/basic-before.sql", "sql/ui-student-data-before.sql"})
-  @SqlAfter ({"sql/basic-after.sql","sql/ui-student-data-after.sql"})
+  @SqlBefore (value={"sql/basic-before.sql", "sql/ui-student-data-before.sql"})
+  @SqlAfter (value={"sql/basic-after.sql","sql/ui-student-data-after.sql"})
   public void testSearchStudent(){
     login(ADMIN_USERNAME, ADMIN_PASSWORD);
     getWebDriver().get(getAppUrl(true) + "/students/searchstudents.page");
@@ -49,12 +49,12 @@ public class StudentTestsBase extends AbstractUITest {
     waitForElementToBePresent(By.cssSelector(".ixTableCell:nth-of-type(2) span"));
     String studentName = getWebDriver().findElement(By.cssSelector(".ixTableCell:nth-of-type(2) span")).getText();
         
-    assertEquals("Test #1, Tanya", studentName);
+    assertEquals("Tanya Testari", studentName);
   }
 
   @Test
-  @SqlBefore ({"sql/basic-before.sql", "sql/ui-student-data-before.sql"})
-  @SqlAfter ({"sql/basic-after.sql","sql/ui-student-data-after.sql"})
+  @SqlBefore (value={"sql/basic-before.sql", "sql/ui-student-data-before.sql"})
+  @SqlAfter (value={"sql/basic-after.sql","sql/ui-student-data-after.sql"})
   public void testCourseViewStudent(){
     login(ADMIN_USERNAME, ADMIN_PASSWORD);
     getWebDriver().get(getAppUrl(true) + "/courses/searchcourses.page");
@@ -75,8 +75,8 @@ public class StudentTestsBase extends AbstractUITest {
   }
 
   @Test
-  @SqlBefore ({"sql/basic-before.sql", "sql/ui-student-data-before.sql"})
-  @SqlAfter ({"sql/basic-after.sql","sql/ui-student-data-after.sql"})
+  @SqlBefore (value={"sql/basic-before.sql", "sql/ui-student-data-before.sql"})
+  @SqlAfter (value={"sql/basic-after.sql","sql/ui-student-data-after.sql"})
   public void testCourseEditStudentBasicDataSsec(){
     login(ADMIN_USERNAME, ADMIN_PASSWORD);
     getWebDriver().get(getAppUrl(true) + "/courses/searchcourses.page");
@@ -102,8 +102,8 @@ public class StudentTestsBase extends AbstractUITest {
   }
 
   @Test
-  @SqlBefore ({"sql/basic-before.sql", "sql/ui-student-data-before.sql"})
-  @SqlAfter ({"sql/basic-after.sql","sql/ui-student-data-after.sql"})
+  @SqlBefore (value={"sql/basic-before.sql", "sql/ui-student-data-before.sql"})
+  @SqlAfter (value={"sql/basic-after.sql","sql/ui-student-data-after.sql"})
   public void testCourseEditStudentBasicDataBirthday(){
     login(ADMIN_USERNAME, ADMIN_PASSWORD);
     getWebDriver().get(getAppUrl(true) + "/courses/searchcourses.page");
@@ -129,8 +129,8 @@ public class StudentTestsBase extends AbstractUITest {
   }
   
   @Test
-  @SqlBefore ({"sql/basic-before.sql", "sql/ui-student-data-before.sql"})
-  @SqlAfter ({"sql/basic-after.sql","sql/ui-student-data-after.sql"})
+  @SqlBefore (value={"sql/basic-before.sql", "sql/ui-student-data-before.sql"})
+  @SqlAfter (value={"sql/basic-after.sql","sql/ui-student-data-after.sql"})
   public void testCourseEditStudentBasicDataGender(){
     login(ADMIN_USERNAME, ADMIN_PASSWORD);
     getWebDriver().get(getAppUrl(true) + "/courses/searchcourses.page");
@@ -156,8 +156,8 @@ public class StudentTestsBase extends AbstractUITest {
   }
 
   @Test
-  @SqlBefore ({"sql/basic-before.sql", "sql/ui-student-data-before.sql"})
-  @SqlAfter ({"sql/basic-after.sql","sql/ui-student-data-after.sql"})
+  @SqlBefore (value={"sql/basic-before.sql", "sql/ui-student-data-before.sql"})
+  @SqlAfter (value={"sql/basic-after.sql","sql/ui-student-data-after.sql"})
   public void testCourseEditStudentBasicDataSecureInfo(){
     login(ADMIN_USERNAME, ADMIN_PASSWORD);
     getWebDriver().get(getAppUrl(true) + "/courses/searchcourses.page");
@@ -183,8 +183,8 @@ public class StudentTestsBase extends AbstractUITest {
   }
   
   @Test
-  @SqlBefore ({"sql/basic-before.sql", "sql/ui-student-data-before.sql"})
-  @SqlAfter ({"sql/basic-after.sql","sql/ui-student-data-after.sql"})
+  @SqlBefore (value={"sql/basic-before.sql", "sql/ui-student-data-before.sql"})
+  @SqlAfter (value={"sql/basic-after.sql","sql/ui-student-data-after.sql"})
   public void testCourseEditStudentStudyprogrammeDataFirstName(){
     login(ADMIN_USERNAME, ADMIN_PASSWORD);
     getWebDriver().get(getAppUrl(true) + "/courses/searchcourses.page");
@@ -211,8 +211,8 @@ public class StudentTestsBase extends AbstractUITest {
   }
   
   @Test
-  @SqlBefore ({"sql/basic-before.sql", "sql/ui-student-data-before.sql"})
-  @SqlAfter ({"sql/basic-after.sql","sql/ui-student-data-after.sql"})
+  @SqlBefore (value={"sql/basic-before.sql", "sql/ui-student-data-before.sql"})
+  @SqlAfter (value={"sql/basic-after.sql","sql/ui-student-data-after.sql"})
   public void testCourseEditStudentStudyprogrammeDataLastName(){
     login(ADMIN_USERNAME, ADMIN_PASSWORD);
     getWebDriver().get(getAppUrl(true) + "/courses/searchcourses.page");
@@ -239,8 +239,8 @@ public class StudentTestsBase extends AbstractUITest {
   }
   
   @Test
-  @SqlBefore ({"sql/basic-before.sql", "sql/ui-student-data-before.sql"})
-  @SqlAfter ({"sql/basic-after.sql","sql/ui-student-data-after.sql"})
+  @SqlBefore (value={"sql/basic-before.sql", "sql/ui-student-data-before.sql"})
+  @SqlAfter (value={"sql/basic-after.sql","sql/ui-student-data-after.sql"})
   public void testCourseEditStudentStudyprogrammeDataNickname(){
     login(ADMIN_USERNAME, ADMIN_PASSWORD);
     getWebDriver().get(getAppUrl(true) + "/courses/searchcourses.page");
@@ -267,8 +267,8 @@ public class StudentTestsBase extends AbstractUITest {
   }
   
   @Test
-  @SqlBefore ({"sql/basic-before.sql", "sql/ui-student-data-before.sql"})
-  @SqlAfter ({"sql/basic-after.sql","sql/ui-student-data-after.sql"})
+  @SqlBefore (value={"sql/basic-before.sql", "sql/ui-student-data-before.sql"})
+  @SqlAfter (value={"sql/basic-after.sql","sql/ui-student-data-after.sql"})
   public void testCourseEditStudentStudyprogrammeDataTags(){
     login(ADMIN_USERNAME, ADMIN_PASSWORD);
     getWebDriver().get(getAppUrl(true) + "/courses/searchcourses.page");
