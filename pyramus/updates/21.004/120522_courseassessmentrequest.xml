@@ -11,7 +11,7 @@
         <field name="archived" type="java.lang.Boolean" nullable="false" unique="false" />
       </fields>
       <foreignKeys>
-        <key referencedColumns="id" columns="courseStudent" referencedTable="CourseStudent"/>
+        <key referencedColumns="id" columns="courseStudent" referencedTable="CourseStudent" name="FKADBCA672AFD6905B"/>
       </foreignKeys>
     </table>
   </createTables>

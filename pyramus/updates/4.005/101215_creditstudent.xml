@@ -24,7 +24,7 @@
       </dropFields>
       
       <addForeignKeys>
-        <key referencedColumns="id" columns="courseStudent" referencedTable="CourseStudent"/>
+        <key referencedColumns="id" columns="courseStudent" referencedTable="CourseStudent" name="FK9833115D55F637B"/>
       </addForeignKeys>
     </table>
 

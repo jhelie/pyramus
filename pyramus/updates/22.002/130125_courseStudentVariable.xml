@@ -11,7 +11,7 @@
         <field name="version" type="java.lang.Long" nullable="false" unique="false" />
       </fields>
       <foreignKeys>
-        <key columns="courseStudent" referencedColumns="id" referencedTable="CourseStudent" />
+        <key columns="courseStudent" referencedColumns="id" referencedTable="CourseStudent" name="FK99F8DC1CAFD6905B"/>
         <key columns="variableKey" referencedColumns="id" referencedTable="CourseStudentVariableKey" />
       </foreignKeys>
     </table>
